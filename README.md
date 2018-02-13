@@ -66,6 +66,7 @@ python manage.py collectstatic
     $ heroku run python3 manage.py collectstatic
     $ heroku open
     $ heroku addons:open papertrail		# opens heroku logs
+    $ heroku logs --tail
 
 
 ## Access PostgreSQL Database
