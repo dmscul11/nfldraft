@@ -6,7 +6,7 @@ Interactive and AI program for NFL Draft assisstance
 
 ## Post Data URL
 Location: https://github.com/dmscul11/nfldraft
-Heroku URL: 
+Heroku URL: https://aai-nfl-draft.herokuapp.com
 
 
 ## Install
@@ -56,7 +56,7 @@ python manage.py collectstatic
 ## Deployment to Heroku
 
     $ heroku login
-    $ heroku git:remote -a apple-watch-backend-django
+    $ heroku git:remote -a aai-nfl-draft
     $ python3 manage.py bower_install && python3 manage.py collectstatic --noinput
     $ git push heroku master
     $ git push heroku branch_name:master 	# for test git branches
