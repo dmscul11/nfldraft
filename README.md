@@ -1,49 +1,94 @@
-# Heroku Django Starter Template
 
-An utterly fantastic project starter template for Django 2.0.
+# Documentation for Fantasy NFL Draft App
 
-## Features
+Interactive and AI program for NFL Draft assisstance
 
-- Production-ready configuration for Static Files, Database Settings, Gunicorn, etc.
-- Enhancements to Django's static file serving functionality via WhiteNoise.
-- Latest Python 3.6 runtime environment.
 
-## How to Use
+## Post Data URL
+Location: https://github.com/dmscul11/nfldraft
+Heroku URL: 
 
-To use this project, follow these steps:
 
-1. Create your working environment.
-2. Install Django (`$ pipenv install django`)
-3. Create a new project using this template
+## Install
 
-## Creating Your Project
+```
+# install conda for python 3
+conda create --name handsfree-apple-watch-django python=3.6
+source activate handsfree-apple-watch-django
+pip install -r requirements.txt
+createdb emrstats
+python manage.py bower_install
+python manage.py migrate
+python manage.py collectstatic
+```
 
-Using this template to create a new Django app is easy::
+- [Python3 and Pip3](https://devcenter.heroku.com/articles/getting-started-with-python#introduction)
+- [NVD3](https://github.com/areski/django-nvd3/blob/develop/README.rst)
+- [Bower for NVD3](https://github.com/nvbn/django-bower/blob/master/README.rst)
 
-    $ django-admin.py startproject --template=https://github.com/heroku/heroku-django-template/archive/master.zip --name=Procfile helloworld
 
-(If this doesn't work on windows, replace `django-admin.py` with `django-admin`)
+## Run App Locally
 
-You can replace ``helloworld`` with your desired project name.
+	$ python3 manage.py makemigrations
+	$ python3 manage.py migrate
+	$ python3 manage.py collectstatic
+	$ heroku local web 	# to run app locally
+	$ python3 manage.py runserver 5000 	# to run app locally and updates automatically with code changes
+
+
+## Push Branch Changes
+
+	$ git branch
+	$ git status
+	$ git add .
+	$ python3 manage.py bower_install && python3 manage.py collectstatic --noinput
+	$ git commit -m "commit summary"
+	$ git push origin branch_name
+
+
+## Checkout Branch Changes
+
+	$ git checkout -b new_branch_name existing_branch_name	# creates a new branch from an existing
+	$ git checkout branch_name
+	$ git pull origin branch_name
+
 
 ## Deployment to Heroku
 
-    $ git init
-    $ git add -A
-    $ git commit -m "Initial commit"
-
-    $ heroku create
+    $ heroku login
+    $ heroku git:remote -a apple-watch-backend-django
+    $ python3 manage.py bower_install && python3 manage.py collectstatic --noinput
     $ git push heroku master
+    $ git push heroku branch_name:master 	# for test git branches
 
-    $ heroku run python manage.py migrate
+    $ heroku run python3 manage.py makemigrations
+    $ heroku run python3 manage.py migrate
+    $ heroku run python3 manage.py collectstatic
+    $ heroku open
+    $ heroku addons:open papertrail		# opens heroku logs
 
-See also, a [ready-made application](https://github.com/heroku/python-getting-started), ready to deploy.
 
+## Access PostgreSQL Database
 
-## License: MIT
+    # Local database
+    $ psql
+    	# \list
+    $ psql emrstats
+    	# delete from emrdata_emrstats;
+
+    # Heroku database
+    $ heroku pg:info
+    $ heroku pg:psql
+    	# \dt
+    	# select * from emrdata_datasession;
+    	# select * from emrdata_emrstats;
+
 
 ## Further Reading
 
 - [Gunicorn](https://warehouse.python.org/project/gunicorn/)
 - [WhiteNoise](https://warehouse.python.org/project/whitenoise/)
 - [dj-database-url](https://warehouse.python.org/project/dj-database-url/)
+- [Flake8Lint](https://github.com/dreadatour/Flake8Lint)
+- See also, a [ready-made application](https://github.com/heroku/python-getting-started), ready to deploy.
+
