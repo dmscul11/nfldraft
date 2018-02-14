@@ -9,3 +9,7 @@ def index(request):
 # adds stats to table
 def add_nfldata(request):
     return HttpResponse('No data added')
+
+# runs fantasy draft
+def begin_draft(request):
+    return HttpResponse('Not started')
