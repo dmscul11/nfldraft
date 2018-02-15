@@ -72,17 +72,15 @@ python manage.py collectstatic
 ## Access PostgreSQL Database
 
     # Local database
-    $ psql
-    	# \list
-    $ psql emrstats
-    	# delete from emrdata_emrstats;
+    $ python3 manage.py migrate --run-syncdb	# create table
+    $ sqlite3 db.sqlite3
+    	# .help
+    	# .tables
+    	# select * from nfldata_playerstats;
+    	# delete from nfldata_playerstats where player = "Russell Wilson";
 
     # Heroku database
     $ heroku pg:info
-    $ heroku pg:psql
-    	# \dt
-    	# select * from emrdata_datasession;
-    	# select * from emrdata_emrstats;
 
 
 ## Further Reading
