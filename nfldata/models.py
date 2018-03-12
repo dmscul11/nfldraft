@@ -24,6 +24,7 @@ class TeamStats(models.Model):
 class PlayerStats(models.Model):
     rank = models.IntegerField(verbose_name='Rank', default=0)
     player = models.CharField(max_length=30, verbose_name='Player', default="")
+    owner = models.CharField(max_length=30, verbose_name='Owner', default="Free Agent")
     position = models.CharField(max_length=30, verbose_name='Position', default="")
     team = models.CharField(max_length=30, verbose_name='Team', default="")
     games = models.IntegerField(verbose_name='Games', default=0)
@@ -65,7 +66,7 @@ class PlayerStats(models.Model):
     points = models.CharField(max_length=30, verbose_name='Points', default="")
 
     def __unicode__(self):
-        return f"{self.rank} {self.player} {self.position} {self.team} {self.games} {self.completions} {self.attempts} {self.percentage} {self.yards} \
+        return f"{self.rank} {self.player} {self.owner} {self.position} {self.team} {self.games} {self.completions} {self.attempts} {self.percentage} {self.yards} \
         {self.yards_per_attempt} {self.touch_downs} {self.interceptions} {self.qb_rating} {self.avg_attempts} {self.avg_yards} {self.avg_yards_per_attempt} \
         {self.avg_touch_downs} {self.targets} {self.receptions} {self.fumbles} {self.lost} {self.longs} {self.yards_per_target} {self.yards_per_reception} \
         {self.rushing} {self.fg_made} {self.fg_attempts} {self.xp_made} {self.xp_attempts} {self.tackle_loss} {self.sacks} {self.qb_hits} {self.fum_rec} \

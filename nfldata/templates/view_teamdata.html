@@ -1,0 +1,45 @@
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 10px;
+    }
+    a.dark {
+        cursor: pointer;
+    }
+</style>
+
+    <div class="container">
+        <table cellspacing="10">
+            <tr>
+                <th>team</th> 
+                <th>team_name</th> 
+                <th>wins</th> 
+                <th>losses</th> 
+                <th>ties</th> 
+                <th>percentage</th> 
+                <th>division</th> 
+                <th>conference</th> 
+                <th>year</th> 
+                <th>bye</th>
+            </tr>
+
+            {% for team in teams %}
+            <tr>
+                <th>{{ team.team }}</td> 
+                <th>{{ team.team_name }}</td> 
+                <th>{{ team.wins }}</td> 
+                <th>{{ team.losses }}</td> 
+                <th>{{ team.ties }}</td> 
+                <th>{{ team.percentage }}</td> 
+                <th>{{ team.division }}</td> 
+                <th>{{ team.conference }}</td> 
+                <th>{{ team.year }}</td> 
+                <th>{{ team.bye }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>

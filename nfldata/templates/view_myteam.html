@@ -1,0 +1,109 @@
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 10px;
+    }
+    a.dark {
+        cursor: pointer;
+    }
+</style>
+
+    <div class="container">
+        <table cellspacing="10">
+            <tr>
+                <th>player</th>
+                <th>owner</th> 
+                <th>rank</th> 
+                <th>position</th> 
+                <th>team</th>
+                <th>ppg</th> 
+                <th>fantasy_points</th> 
+                <th>year</th> 
+                <th>points</th> 
+                <th>games</th> 
+                <th>completions</th> 
+                <th>attempts</th> 
+                <th>percentage</th> 
+                <th>yards</th> 
+                <th>yards_per_attempt</th> 
+                <th>touch_downs</th> 
+                <th>interceptions</th> 
+                <th>qb_rating</th> 
+                <th>avg_attempts</th> 
+                <th>avg_yards</th> 
+                <th>avg_yards_per_attempt</th> 
+                <th>avg_touch_downs</th> 
+                <th>targets</th> 
+                <th>receptions</th> 
+                <th>fumbles</th> 
+                <th>lost</th> 
+                <th>longs</th> 
+                <th>yards_per_target</th> 
+                <th>yards_per_reception</th> 
+                <th>rushing</th> 
+                <th>fg_made</th> 
+                <th>fg_attempts</th> 
+                <th>xp_made</th> 
+                <th>xp_attempts</th> 
+                <th>tackle_loss</th> 
+                <th>sacks</th> 
+                <th>qb_hits</th> 
+                <th>fum_rec</th> 
+                <th>safeties</th> 
+                <th>def_td</th> 
+                <th>return_td</th> 
+                <th>pts_allowed</th> 
+            </tr>
+
+            {% for player in players %}
+            <tr> 
+                <th>{{ player.player }}</td>
+                <th>{{ player.owner }}</td> 
+                <th>{{ player.rank }}</td>
+                <th>{{ player.position }}</td> 
+                <th>{{ player.team }}</td> 
+                <th>{{ player.ppg }}</td> 
+                <th>{{ player.fantasy_points }}</td> 
+                <th>{{ player.year }}</td> 
+                <th>{{ player.points }}</td>
+                <th>{{ player.games }}</td> 
+                <th>{{ player.completions }}</td> 
+                <th>{{ player.attempts }}</td> 
+                <th>{{ player.percentage }}</td> 
+                <th>{{ player.yards }}</td> 
+                <th>{{ player.yards_per_attempt }}</td> 
+                <th>{{ player.touch_downs }}</td> 
+                <th>{{ player.interceptions }}</td> 
+                <th>{{ player.qb_rating }}</td> 
+                <th>{{ player.avg_attempts }}</td> 
+                <th>{{ player.avg_yards }}</td> 
+                <th>{{ player.avg_yards_per_attempt }}</td> 
+                <th>{{ player.avg_touch_downs }}</td> 
+                <th>{{ player.targets }}</td> 
+                <th>{{ player.receptions }}</td> 
+                <th>{{ player.fumbles }}</td> 
+                <th>{{ player.lost }}</td> 
+                <th>{{ player.longs }}</td> 
+                <th>{{ player.yards_per_target }}</td> 
+                <th>{{ player.yards_per_reception }}</td> 
+                <th>{{ player.rushing }}</td> 
+                <th>{{ player.fg_made }}</td> 
+                <th>{{ player.fg_attempts }}</td> 
+                <th>{{ player.xp_made }}</td> 
+                <th>{{ player.xp_attempts }}</td> 
+                <th>{{ player.tackle_loss }}</td> 
+                <th>{{ player.sacks }}</td> 
+                <th>{{ player.qb_hits }}</td> 
+                <th>{{ player.fum_rec }}</td> 
+                <th>{{ player.safeties }}</td> 
+                <th>{{ player.def_td }}</td> 
+                <th>{{ player.return_td }}</td> 
+                <th>{{ player.pts_allowed }}</td> 
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
