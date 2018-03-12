@@ -29,6 +29,9 @@ python manage.py collectstatic
 
 ## Run App Locally
 
+    $ python3 manage.py migrate --run-syncdb
+    $ curl http://127.0.0.1:5000/nfldata/add-nfldata/
+
 	$ python3 manage.py makemigrations
 	$ python3 manage.py migrate
 	$ python3 manage.py collectstatic

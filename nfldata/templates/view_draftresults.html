@@ -1,0 +1,37 @@
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 10px;
+    }
+    a.dark {
+        cursor: pointer;
+    }
+</style>
+
+    <div class="container">
+        <table cellspacing="10">
+            <tr>
+                <th>Team Name</th>
+                <th>Total Points</th>
+                <th>Byes</th>
+                <th>Teams</th>
+                <th>Players</th>
+            </tr>
+
+            {% for t in output %}
+            <tr>
+                <th>{{ t.team_name }}</td>
+                <th>{{ t.total_pts }}</td>
+                <th>{{ t.byes }}</td>
+                <th>{{ t.teams }}</td>
+                <th>{{ t.players }}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+
